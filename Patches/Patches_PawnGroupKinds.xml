@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/PawnGroupKindDef[defName="Combat" or defName="Trader" or defName="Peaceful" or defName="Settlement"]/workerClass</xpath>
+		<value><workerClass>D9Extended.PawnGroupKindWorker_FE</workerClass></value>
+	</Operation>
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/PawnGroupKindDef[defName="Trader"]/workerClass</xpath>
+		<value>
+            <li Class="D9Extended.PawnGroupKindWorkerME">
+				<type>Trader</type>
+			</li>
+        </value>
+	</Operation>
+</Patch>
