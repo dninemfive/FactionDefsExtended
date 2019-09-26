@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>FactionDefs Extended</name>
+  <author>dninemfive</author>
+  <supportedVersions><li>1.0</li></supportedVersions>
+  <description>A framework exposing several fields which could not formerly be controlled in FactionDefs, PawnKindDefs, and a few miscellaneous other files. Right now, you can control gender distribution, body types, and a few more appearance features.\n\nFuture plans include a uniform system and a way of controlling faction relations.</description>
+</ModMetaData>

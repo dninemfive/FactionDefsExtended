@@ -1,0 +1,15 @@
+C:\Users\dninemfive\Documents\Visual Studio 2017\Projects\FactionDefsExpanded\FactionDefsExpanded\obj\Debug\FactionDefsExpanded.csprojResolveAssemblyReference.cache
+C:\Users\dninemfive\Documents\Visual Studio 2017\Projects\FactionDefsExpanded\FactionDefsExpanded\obj\Debug\FactionDefsExpanded.csproj.CoreCompileInputs.cache
+C:\Users\dninemfive\Documents\Visual Studio 2017\Projects\FactionDefsExpanded\FactionDefsExpanded\bin\Debug\FactionDefsExtended.dll
+C:\Users\dninemfive\Documents\Visual Studio 2017\Projects\FactionDefsExpanded\FactionDefsExpanded\bin\Debug\FactionDefsExtended.pdb
+C:\Users\dninemfive\Documents\Visual Studio 2017\Projects\FactionDefsExpanded\FactionDefsExpanded\bin\Debug\0Harmony.dll
+C:\Users\dninemfive\Documents\Visual Studio 2017\Projects\FactionDefsExpanded\FactionDefsExpanded\bin\Debug\Assembly-CSharp.dll
+C:\Users\dninemfive\Documents\Visual Studio 2017\Projects\FactionDefsExpanded\FactionDefsExpanded\bin\Debug\UnityEngine.dll
+C:\Users\dninemfive\Documents\Visual Studio 2017\Projects\FactionDefsExpanded\FactionDefsExpanded\bin\Debug\TextMeshPro-1.0.55.56.0b11.dll
+C:\Users\dninemfive\Documents\Visual Studio 2017\Projects\FactionDefsExpanded\FactionDefsExpanded\bin\Debug\Assembly-CSharp-firstpass.dll
+C:\Users\dninemfive\Documents\Visual Studio 2017\Projects\FactionDefsExpanded\FactionDefsExpanded\bin\Debug\NAudio.dll
+C:\Users\dninemfive\Documents\Visual Studio 2017\Projects\FactionDefsExpanded\FactionDefsExpanded\bin\Debug\NVorbis.dll
+C:\Users\dninemfive\Documents\Visual Studio 2017\Projects\FactionDefsExpanded\FactionDefsExpanded\bin\Debug\UnityEngine.UI.dll
+C:\Users\dninemfive\Documents\Visual Studio 2017\Projects\FactionDefsExpanded\FactionDefsExpanded\obj\Debug\FactionDefsExpanded.csproj.CopyComplete
+C:\Users\dninemfive\Documents\Visual Studio 2017\Projects\FactionDefsExpanded\FactionDefsExpanded\obj\Debug\FactionDefsExtended.dll
+C:\Users\dninemfive\Documents\Visual Studio 2017\Projects\FactionDefsExpanded\FactionDefsExpanded\obj\Debug\FactionDefsExtended.pdb
