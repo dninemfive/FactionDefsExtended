@@ -13,3 +13,15 @@ C:\Users\dninemfive\Documents\Visual Studio 2017\Projects\FactionDefsExpanded\Fa
 C:\Users\dninemfive\Documents\Visual Studio 2017\Projects\FactionDefsExpanded\FactionDefsExpanded\obj\Debug\FactionDefsExpanded.csproj.CopyComplete
 C:\Users\dninemfive\Documents\Visual Studio 2017\Projects\FactionDefsExpanded\FactionDefsExpanded\obj\Debug\FactionDefsExtended.dll
 C:\Users\dninemfive\Documents\Visual Studio 2017\Projects\FactionDefsExpanded\FactionDefsExpanded\obj\Debug\FactionDefsExtended.pdb
+C:\Users\dninemfive\Documents\mods\Rimworld\F1.0\FactionDefs Extended\Source\FactionDefsExpanded\bin\Debug\FactionDefsExtended.dll
+C:\Users\dninemfive\Documents\mods\Rimworld\F1.0\FactionDefs Extended\Source\FactionDefsExpanded\bin\Debug\FactionDefsExtended.pdb
+C:\Users\dninemfive\Documents\mods\Rimworld\F1.0\FactionDefs Extended\Source\FactionDefsExpanded\bin\Debug\TextMeshPro-1.0.55.56.0b11.dll
+C:\Users\dninemfive\Documents\mods\Rimworld\F1.0\FactionDefs Extended\Source\FactionDefsExpanded\bin\Debug\Assembly-CSharp-firstpass.dll
+C:\Users\dninemfive\Documents\mods\Rimworld\F1.0\FactionDefs Extended\Source\FactionDefsExpanded\bin\Debug\NAudio.dll
+C:\Users\dninemfive\Documents\mods\Rimworld\F1.0\FactionDefs Extended\Source\FactionDefsExpanded\bin\Debug\NVorbis.dll
+C:\Users\dninemfive\Documents\mods\Rimworld\F1.0\FactionDefs Extended\Source\FactionDefsExpanded\bin\Debug\UnityEngine.UI.dll
+C:\Users\dninemfive\Documents\mods\Rimworld\F1.0\FactionDefs Extended\Source\FactionDefsExpanded\obj\Debug\FactionDefsExpanded.csprojResolveAssemblyReference.cache
+C:\Users\dninemfive\Documents\mods\Rimworld\F1.0\FactionDefs Extended\Source\FactionDefsExpanded\obj\Debug\FactionDefsExpanded.csproj.CoreCompileInputs.cache
+C:\Users\dninemfive\Documents\mods\Rimworld\F1.0\FactionDefs Extended\Source\FactionDefsExpanded\obj\Debug\FactionDefsExpanded.csproj.CopyComplete
+C:\Users\dninemfive\Documents\mods\Rimworld\F1.0\FactionDefs Extended\Source\FactionDefsExpanded\obj\Debug\FactionDefsExtended.dll
+C:\Users\dninemfive\Documents\mods\Rimworld\F1.0\FactionDefs Extended\Source\FactionDefsExpanded\obj\Debug\FactionDefsExtended.pdb

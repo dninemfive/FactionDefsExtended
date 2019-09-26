@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <PawnGroupKindDef>
+    <defName>FECombat</defName>
+    <workerClass>D9Extended.PawnGroupKindWorker_FE</workerClass>	
+  </PawnGroupKindDef>
+  
+  <PawnGroupKindDef>
+    <defName>FETrader</defName>
+    <workerClass>D9Extended.PawnGroupKindWorker_FE</workerClass>
+	<modExtensions>
+		<li Class="D9Extended.PawnGroupKindWorkerME">
+			<type>Trader</type>
+		</li>
+	</modExtensions>
+  </PawnGroupKindDef>
+
+  <PawnGroupKindDef>
+    <defName>FEPeaceful</defName>
+    <workerClass>D9Extended.PawnGroupKindWorker_FE</workerClass>
+  </PawnGroupKindDef>
+
+  <PawnGroupKindDef>
+    <defName>FESettlement</defName>
+    <workerClass>D9Extended.PawnGroupKindWorker_FE</workerClass>
+  </PawnGroupKindDef>
+  
+</Defs>

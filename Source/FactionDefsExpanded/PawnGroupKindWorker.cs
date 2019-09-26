@@ -12,7 +12,7 @@ namespace D9Extended
     {
         public PawnGroupKindWorkerME modExtension => def.GetModExtension<PawnGroupKindWorkerME>();
         public bool hasModExtension => def.HasModExtension<PawnGroupKindWorkerME>();
-        bool isTrader => modExtension.type == PawnGroupKindWorkerME.Type.Trader;
+        bool isTrader => !hasModExtension || modExtension.type == PawnGroupKindWorkerME.Type.Trader;
 
         public override float MinPointsToGenerateAnything(PawnGroupMaker groupMaker)
         {
