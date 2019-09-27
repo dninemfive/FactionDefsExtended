@@ -9,6 +9,7 @@ using System.Reflection;
 
 namespace D9Extended
 {
+    /*
     [StaticConstructorOnStartup]
     static class HarmonyPatches
     {
@@ -35,5 +36,5 @@ namespace D9Extended
         //Faction.TryMakeInitialRelationWith()
         //TileFinder.RandomSettlementTileFor()
         //Faction.GenerateNewLeader()
-    }
+    }*/
 }

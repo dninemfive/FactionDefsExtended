@@ -7,7 +7,7 @@ using RimWorld;
 
 namespace D9Extended
 {
-    class ThingWeight
+    public class ThingWeight
     {
         public static ThingWeight Human = new ThingWeight(ThingDefOf.Human, 1.0f);
         public ThingDef def;

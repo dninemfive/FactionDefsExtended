@@ -344,20 +344,19 @@ namespace D9Extended
                 {
                     Faction faction;
                     FactionDef factionType = (req.Faction == null) ? ((!Find.FactionManager.TryGetRandomNonColonyHumanlikeFaction(out faction, false, true, TechLevel.Undefined)) ? Faction.OfAncients.def : faction.def) : req.Faction.def;
-                    pawn.story.melanin = ((!req.FixedMelanin.HasValue) ? PawnSkinColors.RandomMelanin(req.Faction) : req.FixedMelanin.Value);
-                    /*
+                    //pawn.story.melanin = ((!req.FixedMelanin.HasValue) ? PawnSkinColors.RandomMelanin(req.Faction) : req.FixedMelanin.Value);
                     if (req.FixedMelanin.HasValue)
                     {
-                        pawn.story.melanin = req.FixedMelanin.Value)
+                        pawn.story.melanin = req.FixedMelanin.Value;
                     }
                     else if ((bool)extension?.centralMelanin.HasValue && (bool)extension?.melaninVariance.HasValue)
                     {
-                        pawn.story.melanin = RandomMelanin(extension);
+                        pawn.story.melanin = D9SkinColors.RandomMelanin(extension);
                     }
                     else
                     {
-                        pawn.story.melanin = PawnSkinColors.RandomMelanin(req.Faction)
-                    }*/
+                        pawn.story.melanin = PawnSkinColors.RandomMelanin(req.Faction);
+                    }
                     pawn.story.crownType = ((Rand.Value < 0.5f) ? CrownType.Average : CrownType.Narrow);
                     pawn.story.hairColor = PawnHairColors.RandomHairColor(pawn.story.SkinColor, pawn.ageTracker.AgeBiologicalYears);
                     PawnBioAndNameGenerator.GiveAppropriateBioAndNameTo(pawn, req.FixedLastName, factionType); //TODO: set name/bio chances

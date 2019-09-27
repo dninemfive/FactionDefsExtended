@@ -7,7 +7,7 @@ using RimWorld;
 
 namespace D9Extended
 {
-    class PawnKindDefME : DefModExtension
+    public class PawnKindDefME : DefModExtension
     {
         public List<ThingWeight> raceWeights = new List<ThingWeight> { new ThingWeight(ThingDefOf.Human, 100f) };
         public float maleProportion = .5f;
