@@ -168,8 +168,10 @@ namespace D9Extended
             if (!req.KindDef.HasModExtension<PawnKindDefME>()) return Verse.PawnGenerator.GeneratePawn(req);
             try
             {
+                MiscUtility.LogMessage("GeneratePawn: 1");
                 Pawn pawn = GenerateOrRedressPawn(req);
                 //candidate to remove
+                MiscUtility.DebugMessage("GeneratePawn: 2");
                 #region checkdead
                 if (pawn != null && !req.AllowDead && pawn.health.hediffSet.hediffs.Any())
                 {
@@ -188,8 +190,8 @@ namespace D9Extended
                 {
                     Find.StoryWatcher.watcherPopAdaptation.Notify_PawnEvent(pawn, PopAdaptationEvent.GainedColonist);
                 }
+                MiscUtility.DebugMessage("GeneratePawn: 3");
                 return pawn;
-
             }
             catch (Exception e)
             {
@@ -199,11 +201,14 @@ namespace D9Extended
         }
         private static Pawn GenerateOrRedressPawn(PawnGenerationRequest req)
         {
-            if (!req.KindDef.HasModExtension<PawnKindDefME>()) return null; //shouldn't happen because I check before doing this
+            MiscUtility.LogMessage("GenerateOrRedressPawn: 1");
+            //if (!req.KindDef.HasModExtension<PawnKindDefME>()); //shouldn't happen because I check before doing this
             Pawn pawn = null;
+            MiscUtility.LogMessage("GenerateOrRedressPawn: 2");
             #region redress
             if (!req.Newborn && !req.ForceGenerateNewPawn)
             {
+                MiscUtility.LogMessage("GenerateOrRedressPawn: 2.5");
                 if (req.ForceRedressWorldPawnIfFormerColonist)
                 {
                     IEnumerable<Pawn> validCandidatesToRedress = GetValidCandidatesToRedress(req);
@@ -240,16 +245,20 @@ namespace D9Extended
             }
             bool redressed;
             #endregion redress
+            MiscUtility.LogMessage("GenerateOrRedressPawn: 3");
             if (pawn == null)
             {
+                MiscUtility.LogMessage("GenerateOrRedressPawn: 3.5");
                 redressed = false;
                 pawn = GenerateNewPawnInternal(ref req);
                 if (pawn == null)
                 {
+                    MiscUtility.LogMessage("GenerateOrRedressPawn: 3.50");
                     return null;
                 }
                 if (req.Inhabitant && req.Tile != -1)
                 {
+                    MiscUtility.LogMessage("GenerateOrRedressPawn: 3.55");
                     SettlementBase settlementBase = Find.WorldObjects.WorldObjectAt<SettlementBase>(req.Tile);
                     settlementBase?.previouslyGeneratedInhabitants.Add(pawn);
                 }
@@ -258,10 +267,12 @@ namespace D9Extended
             {
                 redressed = true;
             }
+            MiscUtility.LogMessage("GenerateOrRedressPawn: 5");
             if (Find.Scenario != null)
             {
                 Find.Scenario.Notify_PawnGenerated(pawn, req.Context, redressed);
             }
+            MiscUtility.LogMessage("GenerateOrRedressPawn: 4");
             return pawn;
         }
 
@@ -303,7 +314,7 @@ namespace D9Extended
         {
             error = null;
             PawnKindDefME extension = req.KindDef.GetModExtension<PawnKindDefME>();
-            Pawn pawn = (Pawn)ThingMaker.MakeThing(extension.raceWeights.RandomElementByWeightWithFallback(x => x.weight, ThingWeight.Human).def, null);
+            Pawn pawn = (Pawn)ThingMaker.MakeThing(ThingDefOf.Human, null); //extension.raceWeights.RandomElementByWeightWithFallback(x => x.weight, ThingWeight.Human).def
             pawnsBeingGenerated.Add(new PawnGenerationStatus(pawn, null));
             try
             {
@@ -334,6 +345,19 @@ namespace D9Extended
                     Faction faction;
                     FactionDef factionType = (req.Faction == null) ? ((!Find.FactionManager.TryGetRandomNonColonyHumanlikeFaction(out faction, false, true, TechLevel.Undefined)) ? Faction.OfAncients.def : faction.def) : req.Faction.def;
                     pawn.story.melanin = ((!req.FixedMelanin.HasValue) ? PawnSkinColors.RandomMelanin(req.Faction) : req.FixedMelanin.Value);
+                    /*
+                    if (req.FixedMelanin.HasValue)
+                    {
+                        pawn.story.melanin = req.FixedMelanin.Value)
+                    }
+                    else if ((bool)extension?.centralMelanin.HasValue && (bool)extension?.melaninVariance.HasValue)
+                    {
+                        pawn.story.melanin = RandomMelanin(extension);
+                    }
+                    else
+                    {
+                        pawn.story.melanin = PawnSkinColors.RandomMelanin(req.Faction)
+                    }*/
                     pawn.story.crownType = ((Rand.Value < 0.5f) ? CrownType.Average : CrownType.Narrow);
                     pawn.story.hairColor = PawnHairColors.RandomHairColor(pawn.story.SkinColor, pawn.ageTracker.AgeBiologicalYears);
                     PawnBioAndNameGenerator.GiveAppropriateBioAndNameTo(pawn, req.FixedLastName, factionType); //TODO: set name/bio chances
@@ -676,7 +700,7 @@ namespace D9Extended
             {
                 pawn.story.bodyType = pawn.story.adulthood.BodyTypeFor(pawn.gender);
             }
-            else if ((ext = pawn.kindDef.GetModExtension<PawnKindDefME>()) != null)
+            else if ((ext = pawn.kindDef.GetModExtension<PawnKindDefME>()) != null && ext.BodyTypeWeights != null)
             {
                 if (pawn.gender == Gender.Female)
                 {
@@ -812,7 +836,7 @@ namespace D9Extended
         {
             PawnKindDefME ext = pawn.kindDef.GetModExtension<PawnKindDefME>();
             float num;
-            bool useExt = ext != null && ext.SkillRanges.Where(x => x.def == sk).Any();
+            bool useExt = ext != null && ext.SkillRanges != null && ext.SkillRanges.Where(x => x.def == sk).Any();
             SkillRange range = null;
             if (useExt)
             {

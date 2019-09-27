@@ -22,7 +22,9 @@ namespace D9Extended
         public List<BodyTypeWeight> BodyTypeWeights = null;
         List<TraitChance> traitChances = null;
         List<HediffWeight> hediffWeights = null;
-        ColorGenerator skinColorsOverride = null;
+        //public ColorGenerator skinColorOverride = null;
+        public float? centralMelanin = null;
+        public float? melaninVariance = null;
         ColorGenerator hairColorsOverride = null;
         RulePackDef customNameMaker = null;
         List<string> hairTagOverride;
