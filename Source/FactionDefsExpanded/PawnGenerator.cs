@@ -796,11 +796,34 @@ namespace D9Extended
             }
             else
             {*/
-                PawnApparelGenerator.GenerateStartingApparelFor(pawn, request);
-                PawnWeaponGenerator.TryGenerateWeaponFor(pawn);
+            PawnApparelGenerator.GenerateStartingApparelFor(pawn, request);
+            PawnWeaponGenerator.TryGenerateWeaponFor(pawn);
             //}
             PawnInventoryGenerator.GenerateInventoryFor(pawn, request);
         }
+
+        /*
+        public static void TryGenerateWeaponFor(Pawn pawn, PawnKindDefME ext)
+        {
+            if (ext == null || ext.WeaponWeights == null)
+            {
+                PawnWeaponGenerator.TryGenerateWeaponFor(pawn);
+                return;
+            }
+            if (pawn.RaceProps.ToolUser && pawn.health.capacities.CapableOf(PawnCapacityDefOf.Manipulation) && (pawn.story == null || !pawn.story.WorkTagIsDisabled(WorkTags.Violent)))
+            {
+                //Predicate<ThingDef> choosable;
+                //if (ext.StuffWeights != null)
+                //{
+                //  choosable = (ThingDef td) => ext.WeaponWeights.Contains(new ThingWeight(td, 1f)) && td.equipmentType == EquipmentType.Primary; // leaving this check out for now, since you could generate untagged weapons && !td.weaponTags.NullOrEmpty();
+                //}
+                //else
+                //{
+                //
+                //}
+                List<ThingStuffPair> choosables = ThingStuffPair.AllWith((ThingDef td) => ext.WeaponWeights.Contains(new ThingWeight(td, 1f)) && td.equipmentType == EquipmentType.Primary);
+            }
+        }*/
         public static int RandomTraitDegree(Pawn pawn, TraitDef traitDef)
         {
             //PawnKindDefME ext = pawn.kindDef.GetModExtension<PawnKindDefME>();

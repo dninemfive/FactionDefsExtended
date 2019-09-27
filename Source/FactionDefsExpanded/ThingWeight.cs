@@ -12,6 +12,12 @@ namespace D9Extended
         public static ThingWeight Human = new ThingWeight(ThingDefOf.Human, 100f);
         public ThingDef def;
         public float weight, weightMale, weightFemale;
+        public float Weight(Gender gender)
+        {
+            if (gender == Gender.Female && weightFemale >= 0) return weightFemale;
+            if (gender == Gender.Male && weightMale >= 0) return weightMale;
+            return weight;
+        }
 
         public ThingWeight(ThingDef d, float w)
         {
@@ -27,6 +33,11 @@ namespace D9Extended
             weightMale = wm;
             weightFemale = wf;
             weight = (wm + wf) / 2;
+        }
+
+        public override bool Equals(object obj)
+        {
+            return obj is ThingWeight && (ThingWeight)obj.def == this.def;
         }
     }
 }

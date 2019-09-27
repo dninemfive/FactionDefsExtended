@@ -29,5 +29,6 @@ namespace D9Extended
         RulePackDef customNameMaker = null;
         List<string> hairTagOverride;
         //hediffs/bionics
+        //private List<ThingWeight> stuffWeights; //TBI
     }
 }
