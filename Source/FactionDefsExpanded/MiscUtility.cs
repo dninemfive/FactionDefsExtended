@@ -8,7 +8,7 @@ namespace D9Extended
 {
     class MiscUtility
     {
-        public static bool DEBUG = false;
+        public static bool DEBUG = true;
         public static string modid = "FactionDefs Extended";
 
         public static void LogError(String s)

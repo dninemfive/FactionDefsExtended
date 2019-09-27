@@ -16,6 +16,7 @@ namespace D9Extended
 
         public override float MinPointsToGenerateAnything(PawnGroupMaker groupMaker)
         {
+            if (isTrader) return 0f;
             return (from x in groupMaker.options
                     where x.kind.isFighter
                     select x).Min((PawnGenOption g) => g.Cost);
@@ -23,6 +24,7 @@ namespace D9Extended
 
         protected override void GeneratePawns(PawnGroupMakerParms parms, PawnGroupMaker groupMaker, List<Pawn> outPawns, bool errorOnZeroResults = true)
         {
+            MiscUtility.DebugMessage("GeneratePawns(); isTrader = " + isTrader);
             if (!CanGenerateFrom(parms, groupMaker))
             {
                 if (errorOnZeroResults)
@@ -184,13 +186,16 @@ namespace D9Extended
 
         public override bool CanGenerateFrom(PawnGroupMakerParms parms, PawnGroupMaker groupMaker)
         {
-            if (hasModExtension && modExtension.type == PawnGroupKindWorkerME.Type.Trader) return base.CanGenerateFrom(parms, groupMaker) && groupMaker.traders.Any() && (parms.tile == -1 || groupMaker.carriers.Any((PawnGenOption x) => Find.WorldGrid[parms.tile].biome.IsPackAnimalAllowed(x.kind.race)));
+            MiscUtility.DebugMessage("CanGenerateFrom:");
+            if (isTrader) return base.CanGenerateFrom(parms, groupMaker) && groupMaker.traders.Any() && (parms.tile == -1 || groupMaker.carriers.Any((PawnGenOption x) => Find.WorldGrid[parms.tile].biome.IsPackAnimalAllowed(x.kind.race)));
             if (!base.CanGenerateFrom(parms, groupMaker))
             {
+                MiscUtility.DebugMessage("base says no");
                 return false;
             }
             if (!PawnGroupMakerUtility.ChoosePawnGenOptionsByPoints(parms.points, groupMaker.options, parms).Any())
             {
+                MiscUtility.DebugMessage("PawnGroupMakerUtility can't find anything");
                 return false;
             }
             return true;
@@ -200,7 +205,7 @@ namespace D9Extended
         {
             if (isTrader)
             {
-                Log.Message("PawnGroupKindWorker_FE.GeneratePawnKindsExample: Hey, this is just how the base game does it!");
+                Log.Message("[FactionDefs Extended] PawnGroupKindWorker_FE.GeneratePawnKindsExample: Hey, this is just how the base game does it!");
                 throw new NotImplementedException();
             }
             else

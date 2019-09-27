@@ -5,7 +5,7 @@
 		<value><workerClass>D9Extended.PawnGroupKindWorker_FE</workerClass></value>
 	</Operation>
 	<Operation Class="PatchOperationAddModExtension">
-		<xpath>Defs/PawnGroupKindDef[defName="Trader"]/workerClass</xpath>
+		<xpath>Defs/PawnGroupKindDef[defName="Trader"]</xpath>
 		<value>
             <li Class="D9Extended.PawnGroupKindWorkerME">
 				<type>Trader</type>
