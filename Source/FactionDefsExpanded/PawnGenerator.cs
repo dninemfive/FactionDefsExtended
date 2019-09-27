@@ -358,7 +358,7 @@ namespace D9Extended
                         pawn.story.melanin = PawnSkinColors.RandomMelanin(req.Faction);
                     }
                     pawn.story.crownType = ((Rand.Value < 0.5f) ? CrownType.Average : CrownType.Narrow);
-                    pawn.story.hairColor = PawnHairColors.RandomHairColor(pawn.story.SkinColor, pawn.ageTracker.AgeBiologicalYears);
+                    pawn.story.hairColor = extension?.hairColorsOverride == null ? PawnHairColors.RandomHairColor(pawn.story.SkinColor, pawn.ageTracker.AgeBiologicalYears) : extension.hairColorsOverride.NewRandomizedColor();
                     PawnBioAndNameGenerator.GiveAppropriateBioAndNameTo(pawn, req.FixedLastName, factionType); //TODO: set name/bio chances
                     pawn.story.hairDef = PawnHairChooser.RandomHairDefFor(pawn, factionType); //TODO: set hair tags by pawn
                     GenerateTraits(pawn, req);

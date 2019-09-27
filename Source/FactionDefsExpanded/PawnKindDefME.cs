@@ -25,7 +25,7 @@ namespace D9Extended
         //public ColorGenerator skinColorOverride = null;
         public float? centralMelanin = null;
         public float? melaninVariance = null;
-        ColorGenerator hairColorsOverride = null;
+        public ColorGenerator hairColorsOverride = null;
         RulePackDef customNameMaker = null;
         List<string> hairTagOverride;
         //hediffs/bionics
