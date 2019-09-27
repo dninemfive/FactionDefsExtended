@@ -9,7 +9,7 @@ namespace D9Extended
 {
     public class PawnKindDefME : DefModExtension
     {
-        public List<ThingWeight> raceWeights = new List<ThingWeight> { new ThingWeight(ThingDefOf.Human, 100f) };
+        public List<ThingWeight> raceWeights = null;// = new List<ThingWeight> { ThingWeight.Human };
         public float maleProportion = .5f;
         public SimpleCurve ageCurve;
         List<ThingDef> defaultParkas = null;

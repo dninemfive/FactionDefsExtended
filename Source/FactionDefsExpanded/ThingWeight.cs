@@ -9,7 +9,7 @@ namespace D9Extended
 {
     public class ThingWeight
     {
-        public static ThingWeight Human = new ThingWeight(ThingDefOf.Human, 1.0f);
+        public static ThingWeight Human = new ThingWeight(ThingDefOf.Human, 100f);
         public ThingDef def;
         public float weight, weightMale, weightFemale;
 

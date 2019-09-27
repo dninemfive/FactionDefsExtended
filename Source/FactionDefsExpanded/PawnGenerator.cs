@@ -314,7 +314,15 @@ namespace D9Extended
         {
             error = null;
             PawnKindDefME extension = req.KindDef.GetModExtension<PawnKindDefME>();
-            Pawn pawn = (Pawn)ThingMaker.MakeThing(ThingDefOf.Human, null); //extension.raceWeights.RandomElementByWeightWithFallback(x => x.weight, ThingWeight.Human).def
+            Pawn pawn;
+            if (extension?.raceWeights != null)
+            {
+                pawn = (Pawn)ThingMaker.MakeThing(extension.raceWeights.RandomElementByWeightWithFallback(x => x.weight, ThingWeight.Human).def, null);
+            }
+            else
+            {
+                pawn = (Pawn)ThingMaker.MakeThing(req.KindDef.race, null);
+            }
             pawnsBeingGenerated.Add(new PawnGenerationStatus(pawn, null));
             try
             {
