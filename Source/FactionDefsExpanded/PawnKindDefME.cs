@@ -7,9 +7,9 @@ using RimWorld;
 
 namespace D9Extended
 {
-    class PawnKindDefME : DefModExtension
+    public class PawnKindDefME : DefModExtension
     {
-        public List<ThingWeight> raceWeights = new List<ThingWeight> { new ThingWeight(ThingDefOf.Human, 100f) };
+        public List<ThingWeight> raceWeights = null;// = new List<ThingWeight> { ThingWeight.Human };
         public float maleProportion = .5f;
         public SimpleCurve ageCurve;
         List<ThingDef> defaultParkas = null;
@@ -22,10 +22,13 @@ namespace D9Extended
         public List<BodyTypeWeight> BodyTypeWeights = null;
         List<TraitChance> traitChances = null;
         List<HediffWeight> hediffWeights = null;
-        ColorGenerator skinColorsOverride = null;
-        ColorGenerator hairColorsOverride = null;
+        //public ColorGenerator skinColorOverride = null;
+        public float? centralMelanin = null;
+        public float? melaninVariance = null;
+        public ColorGenerator hairColorsOverride = null;
         RulePackDef customNameMaker = null;
         List<string> hairTagOverride;
         //hediffs/bionics
+        //private List<ThingWeight> stuffWeights; //TBI
     }
 }

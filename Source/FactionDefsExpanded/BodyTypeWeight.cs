@@ -6,7 +6,7 @@ using RimWorld;
 
 namespace D9Extended
 {
-    class BodyTypeWeight
+    public class BodyTypeWeight
     {
         public BodyTypeDef type, femaleType = null;
         public float maleWeight, femaleWeight;

@@ -8,7 +8,7 @@ using RimWorld;
 
 namespace D9Extended
 {
-    class SkillRange
+    public class SkillRange
     {
         public IntRange range;
         public SkillDef def;

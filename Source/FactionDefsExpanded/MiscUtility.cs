@@ -6,7 +6,7 @@ using Verse;
 
 namespace D9Extended
 {
-    class MiscUtility
+    static class MiscUtility
     {
         public static bool DEBUG = true;
         public static string modid = "FactionDefs Extended";
@@ -40,6 +40,12 @@ namespace D9Extended
         public static void DebugMessage(String s)
         {
             if (DEBUG) Log.Message(prefix + s);
+        }
+
+        public static bool FalseIfNull(bool? b)
+        {
+            if (b == null) return false;
+            return (bool)b;
         }
     }
 }
