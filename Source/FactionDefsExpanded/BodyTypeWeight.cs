@@ -8,7 +8,7 @@ namespace D9Extended
 {
     class BodyTypeWeight
     {
-        public BodyTypeDef type, femaleType = null;
+        public BodyTypeDef type;
         public float maleWeight, femaleWeight;
     }
 }

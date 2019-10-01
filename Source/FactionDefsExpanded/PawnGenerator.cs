@@ -303,7 +303,7 @@ namespace D9Extended
         {
             error = null;
             PawnKindDefME extension = req.KindDef.GetModExtension<PawnKindDefME>();
-            Pawn pawn = (Pawn)ThingMaker.MakeThing(extension.raceWeights.RandomElementByWeightWithFallback(x => x.weight, ThingWeight.Human).def, null);
+            Pawn pawn = (Pawn)ThingMaker.MakeThing(extension.raceWeights.RandomElementByWeightWithFallback(x => x.weight, null).def, ThingDefOf.Human);
             pawnsBeingGenerated.Add(new PawnGenerationStatus(pawn, null));
             try
             {
@@ -435,7 +435,7 @@ namespace D9Extended
                 float? fixedChronologicalAge = request.FixedChronologicalAge;
                 if ((hasValue & fixedChronologicalAge.HasValue) && fixedBiologicalAge.GetValueOrDefault() > fixedChronologicalAge.GetValueOrDefault())
                 {
-                    MiscUtility.LogWarning("Tried to generate age for pawn " + pawn + ", but pawn generation request demands biological age (" + request.FixedBiologicalAge + ") to be greater than chronological age (" + request.FixedChronologicalAge + ").", false);
+                    Log.Warning("Tried to generate age for pawn " + pawn + ", but pawn generation request demands biological age (" + request.FixedBiologicalAge + ") to be greater than chronological age (" + request.FixedChronologicalAge + ").", false);
                 }
             }
             if (request.Newborn)
@@ -537,7 +537,7 @@ namespace D9Extended
                     {
                         if (pawn2.Discarded)
                         {
-                            MiscUtility.LogWarning("Warning during generating pawn relations for " + pawn + ": Pawn " + pawn2 + " is discarded, yet he was yielded by PawnUtility. Discarding a pawn means that he is no longer managed by anything.", false);
+                            Log.Warning("Warning during generating pawn relations for " + pawn + ": Pawn " + pawn2 + " is discarded, yet he was yielded by PawnUtility. Discarding a pawn means that he is no longer managed by anything.", false);
                         }
                         else if (pawn2.Faction != null && pawn2.Faction.IsPlayer)
                         {
@@ -743,7 +743,7 @@ namespace D9Extended
                     }
                     return;
                 }
-                MiscUtility.LogError("Too many iterations.", false);
+                Log.Error("Too many iterations.", false);
             }
         }
         private static void GenerateGearFor(Pawn pawn, PawnGenerationRequest request)
