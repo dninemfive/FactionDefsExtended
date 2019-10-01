@@ -16,7 +16,7 @@ namespace D9Extended
         {
             var harmony = HarmonyInstance.Create("com.dninemfive.factiondefsextended");
             harmony.PatchAll(Assembly.GetExecutingAssembly());
-            Log.Message("[Accessible Archotech] Harmony loaded.");
+            MiscUtility.LogMessage("Harmony Loaded");
         }
 
         [HarmonyPatch(typeof(FactionGenerator))]

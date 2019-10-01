@@ -205,7 +205,7 @@ namespace D9Extended
         {
             if (isTrader)
             {
-                Log.Message("[FactionDefs Extended] PawnGroupKindWorker_FE.GeneratePawnKindsExample: Hey, this is just how the base game does it!");
+                MiscUtility.LogMessage("PawnGroupKindWorker_FE.GeneratePawnKindsExample: Hey, this is just how the base game does it!");
                 throw new NotImplementedException();
             }
             else

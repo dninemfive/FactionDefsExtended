@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Verse;
+using RimWorld;
 
 namespace D9Extended
 {
     class ThingWeight
     {
+        public static ThingWeight Human = new ThingWeight(ThingDefOf.Human, 1.0f);
         public ThingDef def;
         public float weight, weightMale, weightFemale;
 
