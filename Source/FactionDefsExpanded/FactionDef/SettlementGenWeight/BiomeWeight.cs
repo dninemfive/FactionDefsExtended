@@ -9,12 +9,12 @@ using UnityEngine;
 
 namespace D9Extended
 {
-    class BiomeWeightClass : IExposable
+    class BiomeWeight : IExposable
     {
         public BiomeDef biome;
         public float weight;
 
-        public BiomeWeightClass(BiomeDef b, float w)
+        public BiomeWeight(BiomeDef b, float w)
         {
             biome = b;
             weight = w;
