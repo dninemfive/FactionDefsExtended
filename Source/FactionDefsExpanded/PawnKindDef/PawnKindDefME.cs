@@ -28,6 +28,7 @@ namespace D9Extended
         List<ThingWeight> StuffWeights = null;
         RulePackDef customNameMaker = null;
         List<string> hairTagOverride;
+        Dictionary<ThingDef, ColorGenerator> clothingColorGenerators;
         //hediffs/bionics
         //private List<ThingWeight> stuffWeights; //TBI
     }

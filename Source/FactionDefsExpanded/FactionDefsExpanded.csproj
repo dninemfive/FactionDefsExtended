@@ -47,26 +47,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BiomeWeightClass.cs" />
-    <Compile Include="BodyTypeWeight.cs" />
-    <Compile Include="FactionDefME.cs" />
-    <Compile Include="FactionOpinion.cs" />
-    <Compile Include="GenerationBias.cs" />
+    <Compile Include="FactionDef\SettlementGenWeight\BiomeWeight.cs" />
+    <Compile Include="FactionDef\SettlementGenWeight\GenWeight_Biome.cs" />
+    <Compile Include="PawnKindDef\BodyTypeWeight.cs" />
+    <Compile Include="FactionDef\FactionDefME.cs" />
+    <Compile Include="FactionDef\FactionOpinion.cs" />
+    <Compile Include="FactionDef\SettlementGenWeight\SettlementGenWeight.cs" />
     <Compile Include="HarmonyPatches.cs" />
-    <Compile Include="HediffWeight.cs" />
+    <Compile Include="PawnKindDef\HediffWeight.cs" />
     <Compile Include="MiscUtility.cs" />
-    <Compile Include="PawnGenerator.cs" />
-    <Compile Include="PawnGroupKindWorker.cs" />
-    <Compile Include="PawnGroupKindWorkerME.cs" />
-    <Compile Include="PawnKindDefME.cs" />
+    <Compile Include="PawnKindDef\PawnGenerator.cs" />
+    <Compile Include="PawnKindDef\PawnGroupKindWorker.cs" />
+    <Compile Include="PawnKindDef\PawnGroupKindWorkerME.cs" />
+    <Compile Include="PawnKindDef\PawnKindDefME.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ServiceRifleDef.cs" />
-    <Compile Include="SkillRange.cs" />
-    <Compile Include="SkinColors.cs" />
-    <Compile Include="ThingWeight.cs" />
-    <Compile Include="TraderPawnGroupOverride.cs" />
-    <Compile Include="TraitChance.cs" />
-    <Compile Include="UniformDef.cs" />
+    <Compile Include="PawnKindDef\SkillRange.cs" />
+    <Compile Include="PawnKindDef\SkinColors.cs" />
+    <Compile Include="PawnKindDef\ThingWeight.cs" />
+    <Compile Include="PawnKindDef\TraitChance.cs" />
+    <Compile Include="PawnKindDef\UniformDef.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using Verse;
 using RimWorld;
-
 namespace D9Extended
 {
-    class UniformDef : Def
+    class TraderPawnGroupOverride
     {
-        List<ThingDef> forcedApparel;
-        Dictionary<ThingDef, ColorGenerator> generators;
+        TraderKindDef trader;
+        PawnGroupMaker pawnGroupMaker;
     }
 }

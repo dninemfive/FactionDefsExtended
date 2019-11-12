@@ -16,14 +16,17 @@ namespace D9Extended
         List<ThingDef> StuffWeights;
         List<Thing> AllowedMortars;
         List<Thing> AllowedTurrets;
-        GenerationBias biases;
+        List<SettlementGenWeight> settlementBiases;
         PawnKindDef leaderPawnKind;
         Pawn CustomFirstLeader;
         float NewLeaderRelatedToPreviousChance;
         List<FactionOpinion> factionOpinions;
         bool useVanillaPawnGroupKinds = true; //true: uses Normal and Trader; false: requests for these are intercepted
         List<TraderPawnGroupOverride> traderGroupOverrides;
+        PawnKindDefME pawnKindDefaults;
         //basic PawnKindDef data
         //some way to override settlement generator
+        //Uniforms: override PawnKindDefs conditionally based on a class or smth
+        //change FactionOpinion preset to more general FactionTicker, which can be overriden for fun effects
     }
 }
