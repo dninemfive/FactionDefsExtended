@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="FactionDef\SettlementGenWeight\BiomeWeight.cs" />
     <Compile Include="FactionDef\SettlementGenWeight\GenWeight_Biome.cs" />
+    <Compile Include="FactionDef\TraderPawnGroupOverride.cs" />
     <Compile Include="PawnKindDef\BodyTypeWeight.cs" />
     <Compile Include="FactionDef\FactionDefME.cs" />
     <Compile Include="FactionDef\FactionOpinion.cs" />
@@ -65,7 +66,6 @@
     <Compile Include="PawnKindDef\SkinColors.cs" />
     <Compile Include="PawnKindDef\ThingWeight.cs" />
     <Compile Include="PawnKindDef\TraitChance.cs" />
-    <Compile Include="PawnKindDef\UniformDef.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
