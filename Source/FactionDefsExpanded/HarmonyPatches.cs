@@ -8,8 +8,7 @@ using Harmony;
 using System.Reflection;
 
 namespace D9Extended
-{
-    /*
+{/*
     [StaticConstructorOnStartup]
     static class HarmonyPatches
     {
@@ -20,14 +19,14 @@ namespace D9Extended
             MiscUtility.LogMessage("Harmony Loaded");
         }
 
-        [HarmonyPatch(typeof(FactionGenerator))]
-        [HarmonyPatch("NewGeneratedFaction")]
+        [HarmonyPatch(typeof(PawnApparelGenerator.PossibleApparelSet))]
+        [HarmonyPatch("AddFreeWarmthAsNeeded")]
         [HarmonyPatch(new Type[] { typeof(FactionDef) })]
         class NewGeneratedFaction
         {
-            public static void NewGeneratedFactionPostfix(ref Faction __result)
+            public bool void AddFreeWarmthAsNeededPrefix(ref PawnApparelGenerator.PossibleApparelSet __instance, NeededWarmth warmth, float mapTemperature)
             {
-                if (__result.def.HasModExtension<FactionDefME>())
+                if (__instance.def.HasModExtension<FactionDefME>())
                 {
 
                 }

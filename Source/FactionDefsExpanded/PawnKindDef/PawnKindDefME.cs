@@ -12,7 +12,7 @@ namespace D9Extended
         // functional things
         public List<ThingWeight> raceWeights = null;
         public float maleProportion = .5f;
-        public SimpleCurve ageCurve;                
+        public SimpleCurve ageCurve = null;             
         public List<SkillRange> SkillRanges = null;
         public List<BodyTypeWeight> BodyTypeWeights = null;        
         public float? centralMelanin = null;
@@ -20,7 +20,6 @@ namespace D9Extended
         public ColorGenerator hairColorsOverride = null;
         // NYI
         public List<ThingWeight> WeaponWeights = null;
-        public List<ThingWeight> ApparelWeights = null;
         List<ThingDef> defaultParkas = null;
         List<ThingDef> defaultTuques = null;
         List<TraitChance> traitChances = null;

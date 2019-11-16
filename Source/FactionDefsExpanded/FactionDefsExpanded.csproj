@@ -57,6 +57,7 @@
     <Compile Include="HarmonyPatches.cs" />
     <Compile Include="PawnKindDef\HediffWeight.cs" />
     <Compile Include="MiscUtility.cs" />
+    <Compile Include="PawnKindDef\PawnApparelGenerator.cs" />
     <Compile Include="PawnKindDef\PawnGenerator.cs" />
     <Compile Include="PawnKindDef\PawnGroupKindWorker.cs" />
     <Compile Include="PawnKindDef\PawnGroupKindWorkerME.cs" />

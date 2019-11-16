@@ -11,7 +11,7 @@ namespace D9Extended
         public static bool DEBUG = true;
         public static string modid = "FactionDefs Extended";
         public static string prefix => "[" + modid + "] ";
-
+        #region log
         public static void LogMessage(String s)
         {
             Log.Message(prefix + s);
@@ -41,11 +41,19 @@ namespace D9Extended
         {
             if (DEBUG) Log.Message(prefix + s);
         }
-
+        #endregion log
+        #region ?
         public static bool FalseIfNull(bool? b)
         {
             if (b == null) return false;
             return (bool)b;
+        }
+        #endregion ?
+        public static List<ThingWeight> WeaponWeightsFor(Pawn pawn)
+        {
+            if (pawn.def.HasModExtension<PawnKindDefME>()) return pawn.def.GetModExtension<PawnKindDefME>().WeaponWeights;
+            if (pawn.Faction.def.HasModExtension<FactionDefME>()) return pawn.Faction.def.GetModExtension<FactionDefME>().pawnKindDefaults?.WeaponWeights;
+            return null;
         }
     }
 }

@@ -23,7 +23,7 @@ namespace D9Extended
         List<FactionOpinion> factionOpinions;
         bool useVanillaPawnGroupKinds = true; //true: uses Normal and Trader; false: requests for these are intercepted
         List<TraderPawnGroupOverride> traderGroupOverrides;
-        PawnKindDefME pawnKindDefaults;
+        public PawnKindDefME pawnKindDefaults = null;
         //some way to override settlement generator
         //Uniforms: override PawnKindDefs conditionally based on a class or smth
         //change FactionOpinion preset to more general FactionTicker, which can be overriden for fun effects
